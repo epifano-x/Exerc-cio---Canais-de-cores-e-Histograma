@@ -20,28 +20,36 @@ imagem_equalizada = cv2.equalizeHist(imagem_cinza)
 # Gerar o histograma da imagem equalizada
 histograma_equalizado = cv2.calcHist([imagem_equalizada], [0], None, [256], [0, 256])
 
-# Plotar as imagens e histogramas
+# Plotar as imagens e histogramas em ordem: imagem, histograma, imagem, histograma
+plt.figure(figsize=(12, 6))
+
+# Imagem Original
 plt.subplot(2, 4, 1)
 plt.imshow(cv2.cvtColor(imagem, cv2.COLOR_BGR2RGB))
 plt.title('Imagem Original')
 
+# Histograma Original
 plt.subplot(2, 4, 2)
-plt.imshow(imagem_cinza, cmap='gray')
-plt.title('Imagem em Tons de Cinza')
-
-plt.subplot(2, 4, 3)
 plt.plot(histograma_original)
 plt.title('Histograma Original')
 
+# Imagem em Tons de Cinza
+plt.subplot(2, 4, 3)
+plt.imshow(imagem_cinza, cmap='gray')
+plt.title('Imagem em Tons de Cinza')
+
+# Histograma em Tons de Cinza
 plt.subplot(2, 4, 4)
 plt.plot(histograma_cinza)
 plt.title('Histograma Tons de Cinza')
 
-plt.subplot(2, 4, 6)
+# Imagem Equalizada
+plt.subplot(2, 4, 5)
 plt.imshow(imagem_equalizada, cmap='gray')
 plt.title('Imagem Equalizada')
 
-plt.subplot(2, 4, 7)
+# Histograma Equalizado
+plt.subplot(2, 4, 6)
 plt.plot(histograma_equalizado)
 plt.title('Histograma Equalizado')
 
