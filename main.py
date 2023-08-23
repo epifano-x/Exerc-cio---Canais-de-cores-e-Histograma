@@ -28,7 +28,7 @@ plt.title('Imagem em Tons de Cinza')
 
 plt.subplot(2, 3, 3)
 plt.plot(histograma_original)
-plt.title('Histograma Original')
+plt.title('Histograma Tons de Cinza')
 
 plt.subplot(2, 3, 4)
 plt.imshow(imagem_equalizada, cmap='gray')
